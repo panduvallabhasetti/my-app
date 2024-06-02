@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo/my-app.git'
+                git 'https://github.com/panduvallabhasetti/my-app.git'
             }
         }
         stage('Build') {

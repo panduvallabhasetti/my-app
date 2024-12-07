@@ -5,8 +5,9 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY /var/lib/jenkins/workspace/RAJU/target/my-app-1.0-SNAPSHOT.jar ./app.jar
+COPY /var/lib/jenkins/workspace/RAJU/target/my-app-1.0-SNAPSHOT.jar /app/app.jar
 
 # Define the command to run the JAR file
 CMD ["java", "-jar", "app.jar"]
+
 

@@ -1,10 +1,13 @@
-FROM openjdk:11-jre-slim AS builder
-WORKDIR /app
-COPY /RAJU/target/my-app-1.0-SNAPSHOT.jar ./app.jar
-
-# Use the builder image to build a final image
+# Start with a base image
 FROM openjdk:11-jre-slim
+
+# Set the working directory in the container
 WORKDIR /app
-COPY --from=builder /app/app.jar ./app.jar
+
+# Copy the JAR file into the container
+COPY RAJU/target/my-app-1.0-SNAPSHOT.jar ./app.jar
+
+# Define the command to run the JAR file
 CMD ["java", "-jar", "app.jar"]
+
 
